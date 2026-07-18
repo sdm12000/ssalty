@@ -10,7 +10,6 @@ export const EVENT = {
   venueShort: "프레쉬엔지니어드 홍대점",
   fee: "5,000원",
   feeNote: "현장 납부",
-  target: "청년 · 부녀 섭외자",
   host: "이어온",
   hostSlogan: "세대를 잇는 가치",
   organizer: "SSalty",

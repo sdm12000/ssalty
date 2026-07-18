@@ -9,7 +9,6 @@ const FACTS = [
   { label: "일시", value: EVENT.dateFull, sub: EVENT.timeRange },
   { label: "장소", value: EVENT.venueShort, sub: "서교플레이스(예정)" },
   { label: "체험비", value: EVENT.fee, sub: EVENT.feeNote },
-  { label: "대상", value: EVENT.target, sub: undefined },
 ];
 
 function makeICS() {
