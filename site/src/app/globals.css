@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors: Core ── */
+  --color-paper: #f4efe4;
+  --color-paper-deep: #ebe3d3;
+  --color-paper-light: #f6f1e7;
+  --color-navy: #1e3a8c;
+  --color-navy-ink: #182e6f;
+  --color-navy-soft: #2c4ca6;
+  --color-terracotta: #a8724e;
+  --color-terracotta-deep: #8f5c3c;
+  --color-terracotta-soft: #c08d63;
+  --color-ink: #2a2622;
+
+  /* ── Colors: Semantic ── */
+  --color-background: #f4efe4;
+  --color-foreground: #2a2622;
+  --color-primary: #1e3a8c;
+  --color-primary-foreground: #f4efe4;
+  --color-secondary: #a8724e;
+  --color-secondary-foreground: #f6f1e7;
+  --color-muted: #ebe3d3;
+  --color-muted-foreground: #6b6157;
+  --color-border: #d9cdb8;
+  --color-ring: #1e3a8c;
+  --color-highlight: #a8724e;
+  --color-success: #4c6b3c;
+  --color-danger: #a33b2e;
+
+  /* ── Tone Journey Stages ── */
+  --color-stage-0: #eae6dc;
+  --color-stage-1: #ede7d9;
+  --color-stage-2: #f1eada;
+  --color-stage-3: #f2e7d3;
+  --color-stage-4: #f0ddc6;
+
+  /* ── Fonts ── */
+  --font-display: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif;
+  --font-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-serif: var(--font-serif-ko), "Nanum Myeongjo", serif;
+  --font-hand: var(--font-hand-ko), "Nanum Pen Script", cursive;
+  --font-accent: var(--font-accent-en), Fraunces, serif;
+  --font-mono: var(--font-mono-en), "Space Grotesk", ui-monospace, monospace;
+
+  /* ── Font Sizes (fluid) ── */
+  --text-mega: clamp(4.5rem, 16vw, 15rem);
+  --text-display: clamp(3rem, 9vw, 8rem);
+  --text-h1: clamp(2.25rem, 5.5vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 4vw, 3rem);
+  --text-h3: clamp(1.375rem, 2.6vw, 2rem);
+  --text-h4: clamp(1.125rem, 1.8vw, 1.5rem);
+  --text-quote: clamp(1.375rem, 2.8vw, 2.25rem);
+  --text-lead: clamp(1.125rem, 1.5vw, 1.375rem);
+  --text-body: clamp(1rem, 1.15vw, 1.125rem);
+  --text-small: clamp(0.875rem, 1vw, 0.9375rem);
+  --text-caption: clamp(0.75rem, 0.85vw, 0.8125rem);
+  --text-hand: clamp(1.75rem, 4.5vw, 3.5rem);
+
+  /* ── Spacing (extends default) ── */
+  --spacing-40: 10rem;
+  --spacing-48: 12rem;
+
+  /* ── Containers ── */
+  --container-prose: 40rem;
+  --container-content: 72rem;
+  --container-wide: 90rem;
+
+  /* ── Radius ── */
+  --radius-doc: 4px;
+  --radius-btn: 6px;
+  --radius-chip: 999px;
+
+  /* ── Shadows (warm ink) ── */
+  --shadow-paper: 0 1px 2px rgba(42, 38, 34, 0.04), 0 2px 8px rgba(42, 38, 34, 0.05);
+  --shadow-card: 0 4px 12px rgba(42, 38, 34, 0.07), 0 12px 32px rgba(42, 38, 34, 0.06);
+  --shadow-lift: 0 8px 20px rgba(42, 38, 34, 0.1), 0 24px 56px rgba(42, 38, 34, 0.09);
+  --shadow-navy: 0 10px 30px rgba(24, 46, 111, 0.18);
+
+  /* ── Easing ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-ink: cubic-bezier(0.33, 0, 0.15, 1);
+  --ease-seal: cubic-bezier(0.34, 1.4, 0.5, 1);
+
+  /* ── Durations ── */
+  --duration-fast: 150ms;
+  --duration-normal: 320ms;
+  --duration-slow: 560ms;
+  --duration-reveal: 900ms;
+}
+
+/* Pretendard Variable — dynamic-subset self-host via CDN @font-face */
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2")
+    format("woff2-variations");
+}
+
+:root {
+  --shadow-press: inset 0 1px 3px rgba(42, 38, 34, 0.12);
+  --gradient-journey: linear-gradient(
+    180deg,
+    #eae6dc 0%,
+    #ede7d9 22%,
+    #f1eada 45%,
+    #f2e7d3 70%,
+    #f0ddc6 100%
+  );
+  --gradient-paper: linear-gradient(160deg, #f6f1e7 0%, #ebe3d3 100%);
+  --gradient-navy: linear-gradient(135deg, #2c4ca6 0%, #182e6f 100%);
+  --gradient-terracotta: linear-gradient(135deg, #c08d63 0%, #8f5c3c 100%);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-navy);
+  color: var(--color-paper);
+}
+
+/* 한글 어절 단위 줄바꿈 */
+h1, h2, h3, h4, p, li, span, blockquote {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 커스텀 언더라인 드로잉 (포스터 밑줄 계승) */
+.underline-draw {
+  background-image: linear-gradient(var(--color-terracotta), var(--color-terracotta));
+  background-repeat: no-repeat;
+  background-size: 0% 0.12em;
+  background-position: 0 92%;
+  transition: background-size var(--duration-slow) var(--ease-out-expo);
+  padding-bottom: 0.02em;
+}
+.underline-draw.is-drawn,
+.group:hover .underline-draw {
+  background-size: 100% 0.12em;
+}
+
+/* tnum 숫자 정렬 */
+.tnum {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* focus-visible 링 */
+:where(a, button, [role="button"], input, [tabindex]):focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-ring) 55%, transparent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* 그레인 텍스처 오버레이 */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* SVG draw-on 유틸 */
+.draw-path {
+  stroke-dasharray: var(--len, 1000);
+  stroke-dashoffset: var(--len, 1000);
+}
+.draw-path.is-drawn {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.4s var(--ease-out-expo);
+}
+
+/* 명조 커서 blink */
+.type-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  background: currentColor;
+  vertical-align: -0.12em;
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* 스크롤 힌트 부유 */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.float-hint {
+  animation: float-y 2.2s ease-in-out infinite;
+}
+
+/* prefers-reduced-motion 전역 폴백 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .draw-path {
+    stroke-dashoffset: 0 !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
