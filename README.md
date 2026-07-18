@@ -13,19 +13,17 @@ Next.js 15 (App Router) · Tailwind CSS v4 · Framer Motion · GSAP ScrollTrigge
 
 ## 로컬 실행
 ```bash
-cd site
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # 프로덕션 빌드
 ```
 
-## Vercel 배포 (중요)
-Next.js 앱은 **`site/` 하위 디렉토리**에 있습니다. Vercel 프로젝트 생성 시:
+## Vercel 배포
+Next.js 앱이 **저장소 루트**에 있으므로 별도 설정이 필요 없습니다.
 
-1. 이 저장소를 import
-2. **Root Directory** 를 **`site`** 로 설정 (기본값 `.` 아님 — 반드시 변경)
-3. Framework Preset: **Next.js** (자동 감지됨)
-4. Build/Output 설정은 기본값 그대로 두면 됩니다
+1. 이 저장소를 Vercel에 import
+2. Framework Preset: **Next.js** (자동 감지됨), Root Directory 는 기본값 `.` 그대로
+3. Deploy
 
 > ⚠️ Next.js는 **15.x** 로 고정되어 있습니다. 16으로 올리지 마세요.
 
